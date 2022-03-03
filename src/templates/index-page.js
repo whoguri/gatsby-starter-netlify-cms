@@ -10,7 +10,8 @@ import FullWidthImage from "../components/FullWidthImage";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-  v1,v2,
+  v1,
+  v2,
   image,
   title,
   heading,
