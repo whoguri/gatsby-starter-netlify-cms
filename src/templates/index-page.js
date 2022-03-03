@@ -27,6 +27,14 @@ export const IndexPageTemplate = ({
         <div className="container">
           <div className="section">
             <div className="columns">
+              <div class="prd-icon add short">
+                    <i class="icon-bg term-life"></i>
+                    <p>{v1}<br> Insurance</p>
+               </div>
+                <div class="prd-icon add short">
+                    <i class="icon-bg term-life"></i>
+                    <p>{v2}<br> Insurance</p>
+                </div>
               <div className="column is-10 is-offset-1">
                 <div className="content">
                   <div className="content">
@@ -77,6 +85,8 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  v1: PropTypes.string,
+  v2: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -94,6 +104,8 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        v1={frontmatter.v1}
+        v2={frontmatter.v2}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
@@ -118,6 +130,8 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
+        v1
+        v2
         title
         image {
           childImageSharp {
